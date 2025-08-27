@@ -4,62 +4,148 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ghafira Anindya Pasha - Projek</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (untuk ikon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Animate.css (untuk animasi) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="custom-style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Ghafira Anindya Pasha</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="tentang.html">Tentang Saya</a></li>
-                    <li><a href="keahlian.html">Keahlian</a></li>
-                    <li><a href="projek.html" class="active">Projek</a></li>
-                    <li><a href="kontak.html">Kontak</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main>
-        <section class="content-section">
-            <div class="container">
-                <h2>Projek Saya</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <!-- <img src="images/project1.jpg" alt="Projek Website Sekolah"> -->
-                        <div class="project-info">
-                            <h3>Website Informasi Sekolah</h3>
-                            <p>Pengembangan website dinamis untuk SMKN 1 Bawang, menampilkan informasi akademik, kegiatan ekstrakurikuler, dan berita terbaru. Memudahkan siswa dan orang tua mengakses informasi penting.</p>
-                            <p class="tech-stack">Teknologi: HTML, CSS, JavaScript, PHP, MySQL</p>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <!-- <img src="images/project2.jpg" alt="Projek Aplikasi Kasir Sederhana"> -->
-                        <div class="project-info">
-                            <h3>Aplikasi Kasir Sederhana</h3>
-                            <p>Aplikasi desktop berbasis Java untuk manajemen transaksi penjualan di toko kecil. Fitur meliputi pencatatan produk, perhitungan total, dan laporan penjualan harian.</p>
-                            <p class="tech-stack">Teknologi: Java, Swing (GUI), SQLite</p>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <!-- <img src="images/project3.jpg" alt="Projek Bot Discord"> -->
-                        <div class="project-info">
-                            <h3>Bot Discord Otomatisasi</h3>
-                            <p>Bot Discord yang dirancang untuk membantu moderasi server dan menyediakan fitur hiburan sederhana. Mampu merespons perintah, memutar musik, dan memberikan notifikasi.</p>
-                            <p class="tech-stack">Teknologi: Python, Discord.py</p>
-                        </div>
+    <!-- Neon Loading Bar -->
+    <div id="loading-bar"></div>
+
+    <!-- Navbar Modern -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Ghafira A.P.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tentang.html">Tentang Saya</a></li>
+                    <li class="nav-item"><a class="nav-link" href="keahlian.html">Keahlian</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projek.html">Projek</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mt-5 pt-5">
+        <div class="text-center mb-5 animate__animated animate__fadeInDown">
+            <h1 class="display-5 fw-bold">Projek Saya</h1>
+            <p class="lead text-muted">Beberapa karya yang pernah saya buat. Klik untuk detail.</p>
+        </div>
+
+        <div class="row">
+            <!-- Project Card 1 -->
+            <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
+                <div class="card project-card" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                    <img src="https://source.unsplash.com/random/600x400/?school,library" class="card-img-top" alt="Projek Website Sekolah">
+                    <div class="card-body">
+                        <h5 class="card-title">Website Informasi Sekolah</h5>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <!-- Project Card 2 -->
+            <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                <div class="card project-card" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                    <img src="https://source.unsplash.com/random/600x400/?cashier,store" class="card-img-top" alt="Projek Aplikasi Kasir">
+                    <div class="card-body">
+                        <h5 class="card-title">Aplikasi Kasir Sederhana</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="col-md-4 mb-4 animate__animated animate__fadeInUp animate__delay-2s">
+                <div class="card project-card" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                    <img src="https://source.unsplash.com/random/600x400/?robot,automation" class="card-img-top" alt="Projek Bot Discord">
+                    <div class="card-body">
+                        <h5 class="card-title">Bot Discord Otomatisasi</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Ghafira Anindya Pasha. Hak Cipta Dilindungi.</p>
+    <!-- Modals -->
+    <!-- Modal 1 -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModal1Label">Website Informasi Sekolah</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://source.unsplash.com/random/800x400/?school,library" class="img-fluid mb-3" alt="">
+                    <p>Pengembangan website dinamis untuk SMKN 1 Bawang, menampilkan informasi akademik, kegiatan ekstrakurikuler, dan berita terbaru. Memudahkan siswa dan orang tua mengakses informasi penting.</p>
+                    <p><strong>Teknologi:</strong> HTML, CSS, JavaScript, PHP, MySQL</p>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModal2Label">Aplikasi Kasir Sederhana</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://source.unsplash.com/random/800x400/?cashier,store" class="img-fluid mb-3" alt="">
+                    <p>Aplikasi desktop berbasis Java untuk manajemen transaksi penjualan di toko kecil. Fitur meliputi pencatatan produk, perhitungan total, dan laporan penjualan harian.</p>
+                    <p><strong>Teknologi:</strong> Java, Swing (GUI), SQLite</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModal3Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModal3Label">Bot Discord Otomatisasi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://source.unsplash.com/random/800x400/?robot,automation" class="img-fluid mb-3" alt="">
+                    <p>Bot Discord yang dirancang untuk membantu moderasi server dan menyediakan fitur hiburan sederhana. Mampu merespons perintah, memutar musik, dan memberikan notifikasi.</p>
+                    <p><strong>Teknologi:</strong> Python, Discord.py</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-muted text-center p-3 mt-5">
+        <p>&copy; 2024 Ghafira Anindya Pasha. Didesain Ulang dengan Unik.</p>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="custom-script.js"></script>
 </body>
 </html>
